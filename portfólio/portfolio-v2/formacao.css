@@ -1,0 +1,236 @@
+/* ===== ESTILO DA PÁGINA FORMAÇÃO ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f6fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ----- CABEÇALHO E MENU ----- */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 8%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+}
+
+.menu a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+}
+
+/* ----- TOPO DA PÁGINA ----- */
+.topo-pagina {
+    text-align: center;
+    padding: 70px 8% 30px;
+    animation: aparecer 1s ease; /* título aparece devagar */
+}
+
+/* Animação: aparece de baixo para cima */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.topo-pagina h1 {
+    font-size: 2.4rem;
+    color: #2563eb;
+}
+
+.topo-pagina p {
+    color: #6b7280;
+}
+
+/* ----- SEÇÕES ----- */
+.secao {
+    padding: 40px 8%;
+}
+
+.titulo-secao {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.titulo-secao::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 8px auto 0;
+    background-color: #f59e0b;
+}
+
+.caixa {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ----- TABELA ----- */
+.tabela {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tabela th,
+.tabela td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela th {
+    background-color: #2563eb;
+    color: #ffffff;
+    width: 40%;
+}
+
+/* Linha fica cinza quando passa o mouse */
+.tabela tr:hover td {
+    background-color: #eef2ff;
+}
+
+/* ----- BARRAS DE HABILIDADES ----- */
+.habilidade {
+    margin-bottom: 20px;
+}
+
+.habilidade p {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.barra {
+    width: 100%;
+    height: 12px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra-cheia {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #f59e0b); /* azul para amarelo */
+    border-radius: 10px;
+    animation: encher 2s ease; /* a barra enche quando a página abre */
+}
+
+/* Tamanho de cada barra */
+.html { width: 80%; }
+.css  { width: 70%; }
+.js   { width: 50%; }
+.git  { width: 40%; }
+
+/* Animação: a barra começa vazia */
+@keyframes encher {
+    from { width: 0; }
+}
+
+/* ----- LISTA NUMERADA ----- */
+.lista-passos {
+    padding-left: 50px;
+}
+
+.lista-passos li {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* ----- RODAPÉ ----- */
+.rodape {
+    background-color: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px 8%;
+    margin-top: 50px;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+.redes a {
+    font-weight: 600;
+}
+
+.redes a:hover {
+    color: #f59e0b;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .topo-pagina h1 {
+        font-size: 1.9rem;
+    }
+
+    .tabela th,
+    .tabela td {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
